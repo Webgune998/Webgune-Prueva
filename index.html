@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Webgune | Ikasenpresa</title>
+<meta name="description" content="Webgune, webgune eta web-aplikazio errazak garatzen dituen ikasenpresa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+ <div class="halves"><div class="half ha"></div><div class="half hb"></div></div>
+ <svg class="streak" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="70" y1="0" x2="30" y2="100" pathLength="100"/></svg>
+ <div class="flash"></div>
+ <button id="skip" type="button">Saltatu · Saltar</button>
+</div>
+<template id="scene">
+ <div class="sky"><i class="moon"></i></div><div class="ground"></div><div class="ttl">WEBGUNE</div>
+ <div class="f f1"><svg viewBox="0 0 100 220"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 118 L34 168 L26 208" stroke="#1c3d5a" stroke-width="13"/><path d="M56 118 L66 160 L76 206" stroke="#1c3d5a" stroke-width="13"/><path d="M20 210h14M72 208h18" stroke="#2a1d12" stroke-width="7"/><path d="M42 68 L28 94 L40 112" stroke="#c68e63" stroke-width="9"/></g><path d="M36 62 L66 62 L62 124 L40 124z" fill="#8d1b20"/><path d="M47 62 L53 62 L55 120 L45 120z" fill="#c68e63"/><path d="M40 120h24" stroke="#d8cba2" stroke-width="7"/><path d="M60 68 L82 84 L96 78" stroke="#c68e63" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="97" cy="78" r="6.5" fill="#c68e63"/><rect x="46" y="50" width="9" height="12" fill="#a8714a"/><ellipse cx="52" cy="40" rx="11" ry="13" fill="#c68e63"/><path d="M40 36 q12 -14 24 0 q-12 -5 -24 0z" fill="#111"/><path d="M57 40h6" stroke="#111" stroke-width="2.4"/><path d="M51 51q5 -2 9 0" stroke="#5a2f1c" stroke-width="2" fill="none"/><path d="M45 44 l3 4" stroke="#7a4a30" stroke-width="1.6"/><ellipse cx="52" cy="29" rx="33" ry="6" fill="#b8892a"/><path d="M36 29 q0 -23 16 -23 q16 0 16 23z" fill="#d9b04a"/><rect x="36" y="23" width="32" height="5" fill="#7d171c"/></svg></div>
+ <div class="f f3 fl"><svg viewBox="0 0 100 220"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 124 L38 170 L34 208" stroke="#3a3350" stroke-width="12"/><path d="M58 124 L64 166 L74 206" stroke="#3a3350" stroke-width="12"/><path d="M28 210h14M70 208h16" stroke="#1d150d" stroke-width="7"/><path d="M44 70 L62 84 L84 66" stroke="#5e4125" stroke-width="9"/></g><path d="M35 60 L68 60 L76 152 L32 152z" fill="#6b4a2b"/><path d="M36 112h38v6H36z" fill="#241a10"/><rect x="58" y="120" width="11" height="13" fill="#241a10"/><path d="M62 68 L84 80 L98 70" stroke="#6b4a2b" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="98" cy="70" r="5.5" fill="#a8714a"/><path d="M98 66 L98 52 M98 52 L92 38 M98 52 L106 38" stroke="#3b2a1a" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M92 38 Q99 50 106 38" stroke="#8d1b20" stroke-width="1.8" fill="none"/><rect x="46" y="50" width="9" height="12" fill="#946239"/><ellipse cx="52" cy="40" rx="11" ry="13" fill="#a8714a"/><circle cx="43" cy="30" r="7" fill="#2a1d12"/><circle cx="52" cy="25" r="8" fill="#2a1d12"/><circle cx="61" cy="30" r="7" fill="#2a1d12"/><path d="M41 33 Q52 27 64 33 L64 37 Q52 31 41 37z" fill="#8d1b20"/><circle cx="55" cy="33" r="4.6" fill="#9ad4ee" stroke="#111" stroke-width="2"/><path d="M58 44h5" stroke="#111" stroke-width="2.2"/><path d="M50 52q4 1 8 0" stroke="#4a2a18" stroke-width="2" fill="none"/></svg></div>
+ <div class="f f2 fl"><svg viewBox="0 0 100 220"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M42 120 L34 168 L28 208" stroke="#151a22" stroke-width="13"/><path d="M56 120 L70 160 L82 206" stroke="#151a22" stroke-width="13"/><path d="M20 210h14M78 208h18" stroke="#0d0d0d" stroke-width="7"/><path d="M42 68 L26 84 L18 70" stroke="#1d513a" stroke-width="9"/></g><path d="M16 72 L5 8 L10 8 L22 72z" fill="#d6dde3"/><rect x="10" y="68" width="16" height="3.5" fill="#c9972b"/><path d="M35 62 L66 62 L68 130 L34 130z" fill="#1d513a"/><path d="M47 62 L54 62 L52 130 L46 130z" fill="#c68e63"/><path d="M34 112h34v9H34z" fill="#e6e2d2"/><path d="M62 68 L84 88 L98 84" stroke="#1d513a" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="98" cy="84" r="5.5" fill="#c68e63"/><path d="M96 82 L142 78 L142 82 L96 88z" fill="#d6dde3"/><rect x="94" y="76" width="4" height="16" fill="#c9972b"/><rect x="46" y="50" width="9" height="12" fill="#a8714a"/><ellipse cx="52" cy="40" rx="11" ry="13" fill="#c68e63"/><path d="M39 38 L39 22 L45 28 L49 15 L55 27 L61 18 L65 38 Q52 29 39 38z" fill="#4f9a4a"/><path d="M57 40h6" stroke="#111" stroke-width="2.4"/><path d="M60 33 l0 14" stroke="#7a4a30" stroke-width="1.5"/><path d="M50 51q4 2 8 0" stroke="#5a2f1c" stroke-width="2" fill="none"/></svg></div>
+</template>
+
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#hasiera">Web<span>gune</span></a>
+  <nav id="menu" aria-label="Menu nagusia">
+   <ul>
+    <li><a href="#hasiera" data-i18n="n1">Hasiera</a></li>
+    <li><a href="#informazioa" data-i18n="n2">Informazioa</a></li>
+    <li><a href="#zerbitzuak" data-i18n="n3">Zerbitzuak</a></li>
+    <li><a href="#erreserba" data-i18n="n5">Erreserba</a></li>
+    <li><a href="#iritziak" data-i18n="n6">Iritziak</a></li>
+    <li><a href="#kontaktua" data-i18n="n7">Kontaktua</a></li>
+   </ul>
+  </nav>
+  <div class="tools">
+   <div class="lang" role="group" aria-label="Hizkuntza / Idioma">
+    <button type="button" data-l="eu" aria-pressed="true">EU</button>
+    <button type="button" data-l="es" aria-pressed="false">ES</button>
+   </div>
+   <button class="burger" id="burger" aria-label="Menua ireki" aria-expanded="false">☰</button>
+  </div>
+ </div>
+</header>
+
+<main>
+<!-- BANNERRA -->
+<div class="hero" id="hasiera">
+ <div class="wrap">
+  <div>
+   <h1><em>Web</em>gune</h1>
+   <p data-i18n="h1">Zure ideiak webgune bihurtzen ditugu. Ikasenpresa honetako lagunok HTML5 eta CSS3 kodea eskuz idazten dugu, ilusioz eta zehaztasunez.</p>
+   <div class="btns">
+    <a class="btn red" href="#erreserba" data-i18n="hb1">Erreserba egin</a>
+    <a class="btn" href="#zerbitzuak" data-i18n="hb2">Zerbitzuak ikusi</a>
+    <a class="btn alt" href="#kontaktua" data-i18n="hb3">Jarri gurekin harremanetan</a>
+   </div>
+  </div>
+  <figure class="hero-art photo" aria-label="Webgune argazkia">
+   <svg viewBox="0 0 400 280" role="img" aria-label="Ordenagailu bat kode-lerroekin">
+    <rect width="400" height="280" fill="#1b6f9a"/>
+    <rect x="60" y="35" width="280" height="170" rx="14" fill="#10263d" stroke="#f2b61f" stroke-width="6"/>
+    <rect x="80" y="55" width="110" height="12" rx="6" fill="#f2b61f"/><rect x="80" y="80" width="200" height="10" rx="5" fill="#5ab6e3"/>
+    <rect x="96" y="100" width="150" height="10" rx="5" fill="#2f9e63"/><rect x="96" y="120" width="180" height="10" rx="5" fill="#e5484d"/>
+    <rect x="80" y="140" width="130" height="10" rx="5" fill="#5ab6e3"/><rect x="80" y="165" width="70" height="14" rx="7" fill="#f2b61f"/>
+    <path d="M30 245h340l-30-40H60z" fill="#eaf4f9"/><rect x="160" y="205" width="80" height="12" fill="#b9d7e3"/>
+   </svg>
+   <figcaption data-i18n="hc">Kodea eskuz idatzia, tresnarik gabe.</figcaption>
+  </figure>
+ </div>
+ <div class="waves"></div>
+</div>
+
+<!-- INFORMAZIO OROKORRA -->
+<section id="informazioa">
+ <div class="wrap two">
+  <div>
+   <h2 data-i18n="i1">Nor gara?</h2>
+   <p data-i18n="i2">Webgune ikasenpresa bat da: ikasleek sortutako eta kudeatutako enpresa-eredu bat. Webguneak, web-aplikazio errazak eta 4K bideoak garatzen eta ekoizten ditugu pertsona, elkarte eta negozio txikientzat.</p>
+   <p data-i18n="i3">Gure helburua sinplea da: zure proiektuak interneten ondo agertzea, azkar kargatzea eta edozein pantailatan ederki ikustea. Lan egiteko modua ere irakasten digu, taldean, erantzukizunez eta bezeroarekin hitz eginez.</p>
+   <div class="stats">
+    <div><b>3</b><small data-i18n="s1">kide</small></div>
+    <div><b>5+</b><small data-i18n="s2">atal</small></div>
+    <div><b>100%</b><small data-i18n="s3">eskuz idatzia</small></div>
+   </div>
+  </div>
+  <figure class="photo">
+   <svg viewBox="0 0 400 300" role="img" aria-label="4K bideo-editorea">
+    <rect width="400" height="300" fill="#0b1119"/>
+    <rect x="30" y="28" width="340" height="190" rx="4" fill="#17324a" stroke="#c9972b" stroke-width="3"/>
+    <path d="M30 218 L110 120 L170 180 L230 110 L370 218z" fill="#0f2233"/>
+    <circle cx="300" cy="75" r="22" fill="#e8eef2" opacity=".85"/>
+    <path d="M185 100 L235 128 L185 156z" fill="#fff" opacity=".9"/>
+    <rect x="42" y="38" width="46" height="24" rx="3" fill="#c9972b"/><text x="65" y="56" font-family="Sora,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#0b1119">4K</text>
+    <rect x="30" y="236" width="340" height="40" rx="3" fill="#142a40"/>
+    <rect x="40" y="246" width="130" height="8" rx="2" fill="#c9972b"/><rect x="175" y="246" width="90" height="8" rx="2" fill="#5a8fb5"/><rect x="270" y="246" width="90" height="8" rx="2" fill="#2d6a4f"/>
+    <rect x="40" y="260" width="80" height="8" rx="2" fill="#5a8fb5"/><rect x="125" y="260" width="150" height="8" rx="2" fill="#c9972b"/>
+    <rect x="212" y="232" width="3" height="48" fill="#fff"/>
+   </svg>
+   <figcaption data-i18n="ic">Bideo-ekoizpena 4K kalitatean.</figcaption>
+  </figure>
+ </div>
+</section>
+
+<!-- ZERBITZUAK -->
+<section id="zerbitzuak" class="alt-bg">
+ <div class="wrap">
+  <div class="title"><h2 data-i18n="z0">Gure zerbitzuak</h2><p data-i18n="z00">Zirriborrotik azken kodera: webgune bat sortzeko behar duzun guztia.</p></div>
+  <div class="grid">
+   <article class="card"><div class="ico">🎨</div><h3 data-i18n="z1">Webgune-diseinua</h3><p data-i18n="z1p">Zure marka islatzen duen diseinu garbia, koloreak, letra-tipoak eta egitura pentsatuta.</p></article>
+   <article class="card"><div class="ico">💻</div><h3 data-i18n="z2">HTML5 eta CSS3 garapena</h3><p data-i18n="z2p">Kodea eskuz idazten dugu, arina, ulergarria eta nabigatzaile guztietan ondo dabilena.</p></article>
+   <article class="card"><div class="ico">✏️</div><h3 data-i18n="z3">Zirriborroak eta mockup-ak</h3><p data-i18n="z3p">Eskuz edo mockup tresnekin, kodea idatzi aurretik zer nahi duzun ikusteko.</p></article>
+   <article class="card"><div class="ico">📱</div><h3 data-i18n="z4">Diseinu moldagarria</h3><p data-i18n="z4p">Mugikorrean, tabletan eta ordenagailuan berdin ikusten den webgunea.</p></article>
+   <article class="card"><div class="ico">🐙</div><h3 data-i18n="z5">GitHub errepositorioa</h3><p data-i18n="z5p">Zure webgunearen kodea GitHubeko errepositorio batean ordenatuta entregatzen dizugu.</p></article>
+   <article class="card"><div class="ico">🛠️</div><h3 data-i18n="z6">Mantentze-lanak</h3><p data-i18n="z6p">Testuak aldatu, argazkiak eguneratu edo atal berriak gehitu nahi badituzu, hemen gaude.</p></article>
+   <article class="card"><div class="ico"></div><h3 data-i18n="z7">4K bideo-ekoizpena</h3><p data-i18n="z7p">Bideo korporatiboak, aurkezpenak eta iragarkiak 4K kalitatean grabatzen ditugu zure webgunerako eta sare sozialetarako.</p></article>
+   <article class="card"><div class="ico"></div><h3 data-i18n="z8">Edizioa eta postprodukzioa</h3><p data-i18n="z8p">Muntaia, kolore-zuzenketa, soinua eta animazioa: bideoa prest entregatzen dizugu.</p></article>
+  </div>
+
+  <div class="title" style="margin-top:4rem"><h2 data-i18n="p0">Nola lan egiten dugun</h2></div>
+  <ol class="steps">
+   <li><b data-i18n="p1">Zirriborroa</b><span data-i18n="p1p">Eskuz edo mockup tresna batekin lehen proposamena egiten dugu.</span></li>
+   <li><b data-i18n="p2">Onarpena</b><span data-i18n="p2p">Irakasleak eta bezeroak zirriborroa onartzen dute.</span></li>
+   <li><b data-i18n="p3">Kodea</b><span data-i18n="p3p">HTML5 eta CSS3 kodea eskuz idazten dugu.</span></li>
+   <li><b data-i18n="p4">Entrega</b><span data-i18n="p4p">Kodea GitHub errepositorioan argitaratzen dugu.</span></li>
+  </ol>
+ </div>
+</section>
+
+<!-- ERRESERBA -->
+<section id="erreserba">
+ <div class="wrap two" style="align-items:start">
+  <div class="side">
+   <h2 data-i18n="e0">Erreserba egin</h2>
+   <p data-i18n="e00">Bete formularioa eta gure taldeak zurekin harremanetan jarriko da zure proiektua hasteko hitzordua adosteko.</p>
+   <h3 data-i18n="e01">Zer gertatuko da gero?</h3>
+   <ul>
+    <li data-i18n="e02">24 orduko epean erantzungo dizugu.</li>
+    <li data-i18n="e03">Lehen bilera doakoa da.</li>
+    <li data-i18n="e04">Zirriborro bat aurkeztuko dizugu onartzeko.</li>
+   </ul>
+  </div>
+  <form id="form" action="https://formsubmit.co/ik.anermartinez@hernanilanh.eus" method="POST">
+   <input type="hidden" name="_subject" value="Webgune: erreserba berria">
+   <input type="hidden" name="_template" value="table">
+   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+   <div class="row">
+    <label><span data-i18n="f1">Izena</span><input type="text" name="Izena" required autocomplete="name"></label>
+    <label><span data-i18n="f2">Posta elektronikoa</span><input type="email" name="email" required autocomplete="email"></label>
+   </div>
+   <div class="row">
+    <label><span data-i18n="f3">Zerbitzua</span>
+     <select name="Zerbitzua"><option data-i18n="o1">Webgune berria</option><option data-i18n="o2">Web-aplikazio erraza</option><option data-i18n="o3">Zirriborroa / mockup-a</option><option data-i18n="o5">4K bideoa</option><option data-i18n="o4">Mantentze-lanak</option></select></label>
+    <label><span data-i18n="f4">Data</span><input type="date" name="Data" required></label>
+   </div>
+   <label><span data-i18n="f5">Mezua</span><textarea name="Mezua" rows="4" data-i18n-ph="fp" placeholder="Kontatu iezaguzu zure proiektua..."></textarea></label>
+   <button class="btn red" id="send" type="submit" data-i18n="f6">Erreserba bidali</button>
+   <div class="ok" id="ok" role="status" data-i18n="f7">Eskerrik asko! Zure erreserba jaso dugu eta laster jarriko gara zurekin harremanetan.</div>
+   <div class="ok err" id="err" role="alert" data-i18n="f8">Ezin izan da erreserba bidali. Saiatu berriro edo idatzi zuzenean info@webgune.eus helbidera.</div>
+  </form>
+ </div>
+</section>
+
+<!-- IRITZIAK -->
+<section id="iritziak" class="alt-bg">
+ <div class="wrap">
+  <div class="title"><h2 data-i18n="r0">Bezeroen iritziak</h2><p data-i18n="r00">Gurekin lan egin dutenek diotena.</p></div>
+  <div class="grid">
+   <article class="card quote"><div class="stars" aria-label="5 izar">★★★★★</div><p data-i18n="r1">Nire okindegiaren webgune politena egin didate. Azkarra, argia eta mugikorrean oso ondo ikusten da.</p><footer><span class="av">A</span><span>Ane, <span data-i18n="r1r">okindegi-jabea</span></span></footer></article>
+   <article class="card quote"><div class="stars" aria-label="5 izar">★★★★★</div><p data-i18n="r2">Zirriborroa berehala erakutsi zidaten eta nik esandako aldaketak egin zituzten. Oso profesionalak.</p><footer><span class="av" style="background:var(--coral)">M</span><span>Mikel, <span data-i18n="r2r">kirol-elkartea</span></span></footer></article>
+   <article class="card quote"><div class="stars" aria-label="5 izar">★★★★☆</div><p data-i18n="r3">Eskuz idatzitako kodea garbia da eta errepositorioa oso ordenatuta entregatu ziguten.</p><footer><span class="av" style="background:var(--leaf)">I</span><span>Irati, <span data-i18n="r3r">irakaslea</span></span></footer></article>
+  </div>
+
+  <div class="title" style="margin-top:4rem"><h2 data-i18n="q0">Ohiko galderak</h2></div>
+  <div style="max-width:760px;margin:0 auto">
+   <details><summary data-i18n="q1">Zenbat denbora behar da webgune bat egiteko?</summary><p data-i18n="q1p">Webgune sinple batek bi-lau aste behar ditu, zirriborroa onartzen den arabera.</p></details>
+   <details><summary data-i18n="q2">Webgunea euskaraz eta gaztelaniaz izan daiteke?</summary><p data-i18n="q2p">Bai. Hizkuntza-botoi bat gehitzen dugu bisitariek nahi duten hizkuntza aukeratzeko.</p></details>
+   <details><summary data-i18n="q3">Kodea nirea izango da?</summary><p data-i18n="q3p">Bai, GitHubeko errepositorio batean entregatzen dizugu osorik.</p></details>
+  </div>
+ </div>
+</section>
+
+<!-- KONTAKTUA -->
+<section id="kontaktua" class="contact">
+ <div class="wrap two">
+  <div>
+   <h2 data-i18n="k0">Kontaktua</h2>
+   <p data-i18n="k00">Galderaren bat duzu? Idatzi edo deitu, pozik erantzungo dizugu.</p>
+   <a class="big" href="mailto:info@webgune.eus">info@webgune.eus</a>
+   <a class="big" href="tel:+34948000000">+34 948 00 00 00</a>
+   <p><span data-i18n="k1">Ordutegia: astelehenetik ostiralera, 9:00 - 14:00</span><br><span data-i18n="k2">Nafarroa, Euskal Herria</span></p>
+   <div class="social">
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+   </div>
+  </div>
+  <div class="map" role="img" aria-label="Kokalekua"><div><span>📍</span><span data-i18n="k3">Hemen gaude: Nafarroa</span></div></div>
+ </div>
+</section>
+</main>
+
+<footer class="main">
+ <div class="wrap">
+  <p><strong>Webgune</strong> — <span data-i18n="ft1">Ikasenpresa proiektua</span> © 2026</p>
+  <p><a href="#hasiera" data-i18n="ft2">Goora itzuli</a> · <a href="https://github.com/" target="_blank" rel="noopener" data-i18n="ft3">Kodea GitHuben</a></p>
+ </div>
+</footer>
+<button class="top" id="top" aria-label="Goora">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
