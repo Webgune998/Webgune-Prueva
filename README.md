@@ -1,2 +1,0 @@
-# Webgune-Prueva
-SSSH

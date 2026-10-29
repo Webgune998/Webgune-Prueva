@@ -112,11 +112,15 @@ body.lock{overflow:hidden}
 #intro{position:fixed;inset:0;z-index:1000;pointer-events:none}
 #intro .halves{position:absolute;inset:0;animation:sh .35s 3.28s both}
 @keyframes sh{20%{transform:translate(-8px,4px)}40%{transform:translate(7px,-5px)}60%{transform:translate(-5px,3px)}80%{transform:translate(4px,-2px)}}
-.half{position:absolute;inset:0;background:#0b1119;overflow:hidden;pointer-events:auto;transition:transform 1.1s cubic-bezier(.75,0,.25,1)}
+.half{position:absolute;inset:0;background:#0b1119;overflow:hidden;pointer-events:auto;}
 .ha{clip-path:polygon(0 0,70% 0,30% 100%,0 100%)}
 .hb{clip-path:polygon(70% 0,100% 0,100% 100%,30% 100%)}
-.cut .ha{transform:translate(-65%,-4%) rotate(-5deg)}.cut .hb{transform:translate(65%,4%) rotate(5deg)}
-.cut .half{pointer-events:none}
+.ha{animation:cutA 1.1s 3.9s cubic-bezier(.75,0,.25,1) both}
+.hb{animation:cutB 1.1s 3.9s cubic-bezier(.75,0,.25,1) both}
+@keyframes cutA{to{transform:translate(-65%,-4%) rotate(-5deg);pointer-events:none}}
+@keyframes cutB{to{transform:translate(65%,4%) rotate(5deg);pointer-events:none}}
+#intro{animation:gone .01s 5.2s both}
+@keyframes gone{to{visibility:hidden}}
 .sky{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,#26405a,#0b1119 70%)}
 .moon{position:absolute;left:50%;top:10%;width:16vmin;height:16vmin;margin-left:-8vmin;border-radius:50%;background:#e8eef2;opacity:.85;box-shadow:0 0 70px rgba(232,238,242,.35)}
 .ground{position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(#10161d,#05080c)}
@@ -128,11 +132,12 @@ body.lock{overflow:hidden}
 .f1{left:20%;animation:a1 4.2s both}.f3{left:54%;animation:a3 4.2s both}.f2{left:80%;animation:a2 4.2s both}
 @keyframes a1{0%{opacity:0;transform:translateX(-4vw)}12%{opacity:1;transform:none}27%{transform:none}35%{transform:translateX(15vw)}41%{transform:translateX(13vw) rotate(-2deg)}47%{transform:translateX(16vw)}53%{transform:translateX(13vw)}59%{transform:translateX(16vw) rotate(2deg)}65%,100%{transform:translateX(14vw)}}
 @keyframes a3{0%{opacity:0}12%{opacity:1;transform:none}27%{transform:none}33%{transform:translate(1vw,-16vh)}40%{transform:translate(-3vw,0)}47%{transform:translate(-1vw,-2vh)}53%{transform:translate(-4vw,0)}59%{transform:translate(-2vw,-2vh)}65%,76%{transform:translate(-5vw,0)}79%{transform:translate(-8vw,-4vh) rotate(-20deg);opacity:1}100%{transform:translate(-22vw,-48vh) rotate(-260deg);opacity:0}}
-@keyframes a2{0%{opacity:0;transform:translateX(4vw)}12%{opacity:1;transform:none}64%{transform:none}70%,75%{transform:translateX(3vw)}78%,100%{transform:translateX(-40vw)}}
+@keyframes a2{0%{opacity:0;transform:translateX(4vw)}12%{opacity:1;transform:none}64%{transform:none}70%,75%{transform:translateX(3vw)}78%,100%{transform:translateX(-33vw)}}
 .streak{position:absolute;inset:0;width:100%;height:100%}
-.streak line{stroke:#fff;stroke-width:3;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;filter:drop-shadow(0 0 6px #9ad4ee);animation:sl 4.2s both}
+.streak line{stroke:#fff;stroke-width:.35;stroke-dasharray:100;stroke-dashoffset:100;filter:drop-shadow(0 0 6px #9ad4ee);animation:sl 4.2s both}
 @keyframes sl{0%,77%{stroke-dashoffset:100;opacity:0}78%{opacity:1}81%,100%{stroke-dashoffset:0;opacity:1}}
-.cut .streak{opacity:0;transition:opacity .6s .15s}
+.streak{animation:sfade .6s 4.05s both}
+@keyframes sfade{to{opacity:0}}
 .flash{position:absolute;inset:0;background:#fff;opacity:0;animation:fl 4.2s both}
 @keyframes fl{0%,77%{opacity:0}79%{opacity:.85}88%,100%{opacity:0}}
 #skip{position:absolute;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));pointer-events:auto;background:transparent;color:#c9d3da;border:1px solid #5a6b7a;border-radius:3px;padding:.45rem 1rem;font:600 .85rem "Inter",sans-serif;cursor:pointer;z-index:2}
